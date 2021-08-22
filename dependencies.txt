@@ -1,11 +1,10 @@
 npm i react react-dom # if no cdn
 
 
-@babel/preset-react
+@babel/preset-react --save-dev
 - includes: @babel/plugin-transform-react-jsx
 - includes: @babel/plugin-transform-react-display-name
 - includes: @babel/plugin-syntax-jsx
-
 @babel/core --save-dev
 @babel/cli --save-dev
 npx babel
@@ -13,12 +12,10 @@ npx babel
 - npx babel script.js --watch --out-file script-compiled.js
 - npx babel --watch ./src --out-dir ./public # --presets react-app/prod
 
+X babel-preset-minify
+X - "presets": ["minify"]
 
-babel-preset-minify
-- "presets": ["minify"]
-
-/*
-.babelrc.js
+/*sample .babelrc.js
 module.exports = {
   presets: [
     [
@@ -31,11 +28,11 @@ module.exports = {
 };
 */
 
-// webpack will auto minify all dependencies into one file
+// webpack will auto minify all dependencies into one file (using babel for jsx)
 npm install --save-dev webpack webpack-dev-server webpack-cli
 npm i --save-dev babel-loader
 
-/*webpack.config.js
+/*sample webpack.config.js
 module.exports = {
   entry: './src/index.js',
   output: {
