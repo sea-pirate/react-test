@@ -9,13 +9,6 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/',
     },
-    devServer: {
-        //compress: false,
-        static: {
-            directory: path.join(process.cwd(), 'public'),
-        },
-        hot: true, // not working
-    },
     resolve: {
         extensions: ['.js', '.jsx'],
     },
@@ -29,8 +22,4 @@ module.exports = {
             },
         ],
     },
-    /*plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-    ],*/
-    devtool: "source-map",
 };

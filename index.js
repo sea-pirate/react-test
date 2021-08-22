@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static("./public"));
 // react files:
-app.use(express.static(path.resolve(__dirname, './build')));
+app.use(express.static(path.resolve(__dirname, './dist'))); // /build
 
 
 const PORT = process.env.PORT || 8080;

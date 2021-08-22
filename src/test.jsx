@@ -1,5 +1,6 @@
-import * as ExtCom from "./some-components";
-
+// import React from "React";
+// import ReactDOM from "ReactDOM";
+import * as ExtCom from "./some-components.jsx";
 class Element extends React.Component { render() { return (<h1>Hi there</h1>); } };
 const StrElement = <pre>Hi hi</pre>; // is just a "string"
 class Text extends React.Component { render() { return (<p>{this.props.text}</p>); } };
@@ -11,7 +12,8 @@ class App extends React.Component {
                 { StrElement  }
                 <Text text="herro" />
                 <Text text="text" />
-                <ExtCom.MyExternalComponent party="true" />
+                {/* ExtCom.testStr */}
+                <ExtCom.MyExternalComponent party={true} />
             </div>
         );
     }
