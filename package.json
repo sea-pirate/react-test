@@ -7,7 +7,7 @@
     "start": "node index.js",
     "build": "webpack --mode production --config webpack.config.prod.js",
     "clean": "rm dist/* -r",
-    "dev": "webpack-dev-server --mode development --hot",
+    "dev": "webpack-dev-server --mode development",
     "build-dev": "webpack --mode development"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "babel-loader": "^8.2.2",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
