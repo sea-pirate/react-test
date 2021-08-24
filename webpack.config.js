@@ -20,7 +20,13 @@ module.exports = {
         static: {
             directory: path.join(process.cwd(), 'public'),
         },
-        port: 8080,
+        /*port: 8088, // different port than nodemon
+        proxy: {
+            "^/route*": {
+                target: "http://localhost:8080/route",
+                //secure: false,
+            },
+        },*/
         //hot: true,
         //liveReload: false,
         //allowedHosts: ['host.com'],
@@ -59,6 +65,6 @@ module.exports = {
     plugins: [
         //isDev && new webpack.HotModuleReplacementPlugin(),
         //isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
-        isDev && new ReactRefreshWebpackPlugin({overlay: { sockProtocol: "wss" }}),
+        isDev && new ReactRefreshWebpackPlugin({ overlay: { sockPort: 80 }}),
     ],
 };
