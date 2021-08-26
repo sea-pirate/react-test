@@ -29,7 +29,8 @@ module.exports = {
 */
 
 // webpack will auto minify all dependencies into one file (using babel for jsx)
-npm install --save-dev webpack webpack-dev-server webpack-cli
+npm install --save-dev webpack webpack-cli
+// do not need webpack-dev-server since we have nodemon...
 npm i --save-dev babel-loader
 
 /*sample webpack.config.js
@@ -56,6 +57,9 @@ module.exports = {
 */
 
 npm i nodemon-webpack-plugin
-// auto-updates webpack --watch and also runs nodemon.
-// TODO: hot updating does not work (check webpack.config.js HMRP and weird files in dist/)
-// https://stackoverflow.com/questions/35545093/webpack-watch-and-launching-nodemon ?
+// better:
+npm i npm-run-all
+/*scripts
+"start": "npm-run-all --parallel watch:server watch:build",
+"watch:build"  : "webpack --watch",
+"watch:server" : "nodemon \"./dist/index.js\" --watch \"./dist\""*/
