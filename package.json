@@ -7,7 +7,7 @@
     "start": "node index.js",
     "build": "webpack --mode production --config webpack.config.prod.js",
     "clean": "rm dist/* -r",
-    "dev": "nodemon index",
+    "dev": "webpack --watch",
     "serve-dev": "webpack-dev-server --mode development",
     "build-dev": "webpack --mode development"
   },
@@ -15,7 +15,8 @@
   "author": "\"Joe Momma\"",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon-webpack-plugin": "^4.5.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",

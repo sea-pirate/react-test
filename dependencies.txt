@@ -54,3 +54,8 @@ module.exports = {
   },
 };
 */
+
+npm i nodemon-webpack-plugin
+// auto-updates webpack --watch and also runs nodemon.
+// TODO: hot updating does not work (check webpack.config.js HMRP and weird files in dist/)
+// https://stackoverflow.com/questions/35545093/webpack-watch-and-launching-nodemon ?

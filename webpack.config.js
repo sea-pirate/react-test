@@ -1,7 +1,8 @@
 // https://createapp.dev/webpack
 const path = require("path");
-//const webpack = require("webpack");
+const { HotModuleReplacementPlugin } = require("webpack");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const NodemonPlugin = require('nodemon-webpack-plugin');
 const isDev = process.env.NODE_ENV !== 'production'; // assert isDev for vulnarable plugins
 
 module.exports = {
@@ -63,8 +64,10 @@ module.exports = {
         // todo css minifier
     },
     plugins: [
-        //isDev && new webpack.HotModuleReplacementPlugin(),
+        isDev && new HotModuleReplacementPlugin(),
         //isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
         isDev && new ReactRefreshWebpackPlugin({ overlay: { sockPort: 80 }}),
+        //new NodemonPlugin(),
+        new NodemonPlugin({ script: "index.js", ignore: ['/dist/*'], env: {NODE_ENV: 'development'}}),
     ],
 };
