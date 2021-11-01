@@ -1,8 +1,9 @@
 // https://createapp.dev/webpack
 const path = require("path");
+
+//const NodemonPlugin = require('nodemon-webpack-plugin');
 //const { HotModuleReplacementPlugin } = require("webpack");
 //const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'); // @0.5.0-rc.5
-//const NodemonPlugin = require('nodemon-webpack-plugin');
 //const isDev = process.env.NODE_ENV !== 'production'; // assert isDev for vulnarable plugins
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
         //"webpack/hot/dev-server",
     ],
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
         publicPath: '/',
     },
@@ -23,7 +24,7 @@ module.exports = {
         /*static: {
             directory: path.join(process.cwd(), 'public'),
         },
-        /port: 8088, // different port than nodemon
+        //port: 8088, // different port than nodemon
         proxy: {
             "^/route*": {
                 target: "http://localhost:8080/route",
@@ -63,13 +64,12 @@ module.exports = {
                 ],
             },
         ],
-        // todo css minifier
     },
     /*plugins: [
         isDev && new HotModuleReplacementPlugin(),
         //isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
         isDev && new ReactRefreshWebpackPlugin({ overlay: { sockPort: 80 }}),
         //new NodemonPlugin(),
-        new NodemonPlugin({ script: "index.js", ignore: ['/dist/*'], env: {NODE_ENV: 'development'}}),
+        //new NodemonPlugin({ script: "index.js", ignore: ['/dist/*'], env: {NODE_ENV: 'development'}}),
     ],*/
 };

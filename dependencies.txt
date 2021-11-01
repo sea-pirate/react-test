@@ -56,10 +56,21 @@ module.exports = {
 };
 */
 
-npm i nodemon-webpack-plugin
+X npm i nodemon-webpack-plugin
 // better:
 npm i npm-run-all
 /*scripts
 "start": "npm-run-all --parallel watch:server watch:build",
 "watch:build"  : "webpack --watch",
 "watch:server" : "nodemon \"./dist/index.js\" --watch \"./dist\""*/
+
+
+
+
+# css minifier
+npm install --save-dev css-minimizer-webpack-plugin
+npm i mini-css-extract-plugin css-loader style-loader -D # required to minimize css
+
+
+# live updating
+pmmmwh/react-refresh-webpack-plugin react-refresh
